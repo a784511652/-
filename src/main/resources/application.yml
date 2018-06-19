@@ -1,0 +1,45 @@
+spring:
+  jackson:
+  #自动略过所有null  直接不显示
+    default-property-inclusion: non_null
+  http:
+    encoding:
+      charset: UTF-8
+  datasource:
+      url: jdbc:mysql://192.168.216.136:3306/sell?characterEncoding=utf-8&useSSL=false
+      username: root
+      password: 123456
+      driver-class-name: com.mysql.jdbc.Driver
+  jpa:
+      show-sql: true
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password: 123456
+
+
+server:
+  context-path: /sell
+  port: 8080
+
+wechat:
+  mpAppId: wxd73f415ec8809c4b
+  mpAppSecret: 2c3b05e36d7f1f1b67f633903ff1e566
+  openAppId:
+  openAppSecret:
+  mchId: 1409146202
+  mchKey: c976503d34ca432601361f969fd8d85
+  keyPath: /var/weixin_cert/h5.p12
+  notifyUrl: http://wakaka.s1.natapp.cc/sell/pay/notify
+  templateId:
+    orderStatus: 填入模板ID
+
+projectUrl:
+  wechatMpAuthorize: http://127.0.0.1:808
+  wechatOpenAuthorize: http://127.0.0.1:808
+  sell: http://127.0.0.1:8080
+logging:
+  level:
+    com.imooc.dataobject.mapper: trace
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
